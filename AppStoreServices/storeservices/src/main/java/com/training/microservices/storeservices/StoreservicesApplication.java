@@ -22,11 +22,11 @@ public class StoreservicesApplication {
 	public CommandLineRunner demo(ProductRepostories repository) {
 		return (args) -> {
 			// save a few customers
-			repository.save(Product.builder().name("iPhone").build());
-			repository.save(Product.builder().name("Samsung").build());
-			repository.save(Product.builder().name("LG").build());
-			repository.save(Product.builder().name("Laptop").build());
-			repository.save(Product.builder().name("Monitor").build());
+			repository.save(Product.builder().name("iPhone").brand("Apple").value("$1000").build());
+			repository.save(Product.builder().name("S21").brand("Samsung").value("$1200").build());
+			repository.save(Product.builder().name("ONED").brand("LG").value("$900").build());
+			repository.save(Product.builder().name("Inspiron").brand("Dell").value("$1100").build());
+			repository.save(Product.builder().name("DS3300").brand("Nikon").value("$600").build());
 
 			// fetch all customers
 			log.info("Products found with findAll():");

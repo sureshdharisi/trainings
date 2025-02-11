@@ -17,4 +17,12 @@ public class ProductServices {
 	public List<Product> getProducts(String name){
 		return productRepostories.findByName(name);
 	}
+	
+	public Product getProduct(Integer id){
+		return productRepostories.findById(id).get();
+	}
+	
+	public List<Product> getProducts(){
+		return productRepostories.findAll();
+	}
 }

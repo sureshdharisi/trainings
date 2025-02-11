@@ -18,8 +18,14 @@ public class ProductsController {
 	@Autowired
 	private ProductServices productServices;
 
+	
+	@GetMapping("/{id}")
+	public Product getProduct(@PathVariable("id") Integer id){
+		return productServices.getProduct(id);
+	}
+	
 	@GetMapping
-	public List<Product> getProductsByName(@PathVariable("name") String name){
-		return productServices.getProducts(name);
+	public List<Product> getProducts(){
+		return productServices.getProducts();
 	}
 }

@@ -3,6 +3,8 @@ package com.training.microservices.storeservices;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+//import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.Bean;
 
 import com.training.microservices.storeservices.entity.Product;
@@ -11,6 +13,7 @@ import com.training.microservices.storeservices.repositories.ProductRepostories;
 import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
+//@EnableEurekaServer
 @Slf4j
 public class StoreservicesApplication {
 
@@ -18,7 +21,7 @@ public class StoreservicesApplication {
 		SpringApplication.run(StoreservicesApplication.class, args);
 	}
 	
-	@Bean
+	//@Bean
 	public CommandLineRunner demo(ProductRepostories repository) {
 		return (args) -> {
 			// save a few customers
